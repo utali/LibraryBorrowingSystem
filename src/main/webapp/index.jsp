@@ -18,7 +18,6 @@
     <h1>YC</h1>
     <input type="button" value="按钮" onclick="queryUser()">
     <a href="hello/test">lalala</a>
-${lalala}
 </body>
 <%--<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>--%>
 <script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
@@ -30,8 +29,8 @@ ${lalala}
             data:'json',
             dataType:'json',
             success:function (data) {
-                console.log(data)
-                alert(data)
+                console.table(data.user)
+                alert('success')
             }
 
         })
