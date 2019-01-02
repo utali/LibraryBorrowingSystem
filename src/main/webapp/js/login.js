@@ -155,13 +155,12 @@ function registerNameBlur() {
         dataType: 'json',
         async: false,
         success: function (data) {
-            console.log(data)
             if (data.status == 1) {
                 $('#registerMessage').html(data.message);
-                $('.registerAlert').show();
+                $('.registerAlert').fadeIn(0);
                 nameFlag = 2;
             } else {
-                $('.registerAlert').hide();
+                $('.registerAlert').fadeOut(0);
             }
         }
     });
