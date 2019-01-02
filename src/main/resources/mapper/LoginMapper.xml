@@ -12,8 +12,6 @@
     <select id="login" parameterType="com.yangch.bean.User" resultType="com.yangch.bean.User">
         select
           user_id as userId,
-          id_card as idCard,
-          password as password,
           name as  name,
           type as  type
         from user
@@ -21,4 +19,29 @@
         and password = #{password}
         and del_flag = '0'
     </select>
+    
+    <select id="getUserRegisterName" parameterType="com.yangch.bean.User" resultType="java.lang.String">
+        select
+          user_id as userId
+        from user
+        where name = #{name}
+        and del_flag = '0'
+    </select>
+
+    <select id="getUserRegisterID" parameterType="com.yangch.bean.User" resultType="java.lang.String">
+        select
+          user_id as userId
+        from user
+        where id_card = #{idCard}
+        and del_flag = '0'
+    </select>
+
+    <insert id="register" parameterType="com.yangch.bean.User">
+        insert into user(
+          user_id, id_card, password, name, type, del_flag, create_time, create_user, update_time, update_user
+        )
+        values(
+          #{userId},#{idCard},#{password},#{name},'0','0',NOW(),#{userId},NOW(),#{userId}
+        )
+    </insert>
 </mapper>

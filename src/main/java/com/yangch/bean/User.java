@@ -10,6 +10,7 @@ public class User {
   private String userId;
   private String idCard;
   private String password;
+  private String passwordAgain;
   private String name;
   private String type;
   private String delFlag;

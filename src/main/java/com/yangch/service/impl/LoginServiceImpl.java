@@ -21,4 +21,19 @@ public class LoginServiceImpl implements LoginService {
     public User login(User input) {
         return loginMapper.login(input);
     }
+
+    @Override
+    public String getUserRegisterName(User input) {
+        return loginMapper.getUserRegisterName(input);
+    }
+
+    @Override
+    public String getUserRegisterID(User input) {
+        return loginMapper.getUserRegisterID(input);
+    }
+
+    @Override
+    public Integer register(User input) {
+        return loginMapper.register(input);
+    }
 }

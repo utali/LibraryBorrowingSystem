@@ -47,6 +47,13 @@
             background-color: #2f1313;
             border-radius: 4px;
         }
+        .registerAlert{
+            float: left;
+            padding: 5px 25px;
+            color: #e69303;
+            background-color: #2f1313;
+            border-radius: 4px;
+        }
     </style>
 
     <script type="text/javascript">
@@ -119,20 +126,20 @@
                 <div class="modal-body">
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="glyphicon glyphicon-credit-card"></span>
                         </span>
-                        <input type="text" id="loginID" class="form-control" placeholder="请输入账号" style="width: 90%" onblur="loginIDBlur()" onfocus="loginIDFocus()">
+                        <input type="text" id="loginID" class="form-control" placeholder="请输入账号" onblur="loginIDBlur()" onfocus="loginIDFocus()">
                     </div>
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                        <input type="password" id="loginPwd" class="form-control" placeholder="请输入密码" style="width: 90%" onfocus="loginPwdFocus()">
+                        <input type="password" id="loginPwd" class="form-control" placeholder="请输入密码" onfocus="loginPwdFocus()">
                     </div>
                     <br>
                     <div>
-                        <input type="text" id="loginCheckCode" class="form-control" placeholder="请输入验证码" style="width: 70%;float: left;" maxlength="4" onfocus="loginCheckCodeFocus()">
+                        <input type="text" id="loginCheckCode" class="form-control" placeholder="请输入验证码" style="width: 80%;float: left;" maxlength="4" onfocus="loginCheckCodeFocus()">
                         <img title="点击更换验证码" id="imgCheckCode" class="imgCheckCode" src="login/getLoginImgCheckCode" alt="验证码" onclick="changeLoginCheckCode()">
                     </div>
                     <br>
@@ -158,10 +165,49 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title">注册</h4>
                 </div>
-                <div class="modal-body">在这里添加一些文本</div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </span>
+                        <input type="text" id="registerName" class="form-control" placeholder="请输入昵称" onblur="registerNameBlur()">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-credit-card"></span>
+                        </span>
+                        <input type="text" id="registerID" class="form-control" placeholder="请输入账号" onblur="registerIDBlur()">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input type="password" id="registerPwd" class="form-control" placeholder="请输入密码" onblur="registerPwdBlur()">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input type="password" id="registerPwdAgain" class="form-control" placeholder="请确认密码" onblur="registerPwdAgainBlur()">
+                    </div>
+                    <br>
+                    <div>
+                        <input type="text" id="registerCheckCode" class="form-control" placeholder="请输入验证码" style="width: 80%;float: left;" maxlength="4">
+                        <img title="点击更换验证码" id="registerImgCheckCode" class="imgCheckCode" src="login/getRegisterImgCheckCode" alt="验证码" onclick="changeRegisterCheckCode()">
+                    </div>
+                    <br>
+                </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">提交更改</button>
+                    <div class="registerAlert" style="display: none">
+                        <strong><span id="registerMessage"></span></strong>
+                    </div>
+                    <div style="float: right">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" data-loading-text="Loading..." onclick="registerUser(this)">注册</button>
+                    </div>
                 </div>
             </div>
         </div>
