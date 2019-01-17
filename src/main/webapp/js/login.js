@@ -302,7 +302,6 @@ function registerUser(obj) {
                 if(data.registerStatus == 0){
                     window.location.href = getContextPath() + "/login/loginSuccess";
                 }else{
-                    alert(1111)
                     $('#registerMessage').html(data.message);
                     $('.registerAlert').fadeIn(0);
                     changeRegisterCheckCode();

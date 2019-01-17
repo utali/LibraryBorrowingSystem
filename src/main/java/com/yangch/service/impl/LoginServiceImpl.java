@@ -23,6 +23,11 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
+    public void updateLastLoginTime(User user) {
+        loginMapper.updateLastLoginTime(user);
+    }
+
+    @Override
     public String getUserRegisterName(User input) {
         return loginMapper.getUserRegisterName(input);
     }

@@ -8,9 +8,12 @@ public interface LoginMapper {
 
     User login(User input);
 
+    void updateLastLoginTime(User user);
+
     String getUserRegisterName(User input);
 
     String getUserRegisterID(User input);
 
     Integer register(User input);
+
 }

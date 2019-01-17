@@ -8,6 +8,8 @@ public interface LoginService {
 
     User login(User input);
 
+    void updateLastLoginTime(User user);
+
     String getUserRegisterName(User input);
 
     String getUserRegisterID(User input);

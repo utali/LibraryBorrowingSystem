@@ -20,6 +20,13 @@
         and del_flag = '0'
     </select>
     
+    <update id="updateLastLoginTime" parameterType="com.yangch.bean.User">
+        update user
+        set last_login_time = NOW()
+        where del_flag = '0'
+        and user_id = #{userId}
+    </update>
+    
     <select id="getUserRegisterName" parameterType="com.yangch.bean.User" resultType="java.lang.String">
         select
           user_id as userId
@@ -38,10 +45,10 @@
 
     <insert id="register" parameterType="com.yangch.bean.User">
         insert into user(
-          user_id, id_card, password, name, type, del_flag, create_time, create_user, update_time, update_user
+          user_id, id_card, password, name, type, del_flag, last_login_time, create_time, create_user, update_time, update_user
         )
         values(
-          #{userId},#{idCard},#{password},#{name},'0','0',NOW(),#{userId},NOW(),#{userId}
+          #{userId},#{idCard},#{password},#{name},'0','0',NOW(),NOW(),#{userId},NOW(),#{userId}
         )
     </insert>
 </mapper>

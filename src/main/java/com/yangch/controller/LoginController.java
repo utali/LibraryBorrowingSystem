@@ -115,6 +115,8 @@ public class LoginController {
             session.removeAttribute("loginCheckCode");
             return jsonObject.toString();
         }
+        //更新登陆时间
+        loginService.updateLastLoginTime(user);
         log.info("登录成功");
         session.setAttribute("user",user);
         jsonObject.put("loginStatus","0");
