@@ -70,5 +70,10 @@
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
 
+    <!--Servlet3.0规范中的<tracking-mode>允许你定义JSESSIONID是存储在cookie中还是URL参数中。-->
+    <session-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
 
 </web-app>

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.yangch.bean.User" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2018/12/17
@@ -14,9 +14,9 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <title>Welcome To LibraryBorrowingSystem</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
 
     <style type="text/css">
@@ -72,6 +72,17 @@
         });
         
         $(function () {
+            //判断用户是否登陆
+            <%
+                User user =(User)session.getAttribute("user");
+                if(user != null){
+                    if(user.getUserId() != null){//如果用户已登录
+                        //请求后台接口跳转主页
+                        response.sendRedirect(request.getRequestURL()+"login/loginSuccess");
+                        return;
+                    }
+                }
+            %>;
             //监控--登录模态框打开
             $('#login').on('show.bs.modal',openLoginModal);
             //监控--登录模态框关闭
