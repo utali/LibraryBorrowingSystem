@@ -24,12 +24,15 @@ function closeLoginModal() {
     $('#login input').val('');
     $('.loginAlert').fadeOut(0);
     changeLoginCheckCode();
+    loginPwdHide();
 }
 //注册模态框关闭时--清空模态框中数据
 function closeRegisterModal() {
     $('#register input').val('');
     $('.registerAlert').fadeOut(0);
     changeRegisterCheckCode();
+    registerPwdHide();
+    registerPwdAgainHide();
 }
 
 // 更换登录模态框图片验证码
@@ -80,6 +83,18 @@ function loginPwdFocus() {
 function loginCheckCodeFocus() {
     $('.loginAlert').fadeOut(0);
     loginIDBlur();
+}
+//登录模态框密码显示
+function loginPwdShow() {
+    $('#loginPwdClose').fadeOut(0);
+    $('#loginPwdOpen').fadeIn(10);
+    $('#loginPwd').prop('type','text');
+}
+//登录模态框密码隐藏
+function loginPwdHide() {
+    $('#loginPwdOpen').fadeOut(0);
+    $('#loginPwdClose').fadeIn(10);
+    $('#loginPwd').prop('type','password');
 }
 //登录
 function login(obj) {
@@ -256,6 +271,30 @@ function registerPwdAgainBlur() {
         }
         return registerPwdAgainFlag;
     }
+}
+//注册模态框--密码--显示
+function registerPwdShow() {
+    $('#registerPwdClose').fadeOut(0);
+    $('#registerPwdOpen').fadeIn(10);
+    $('#registerPwd').prop('type','text');
+}
+//注册模态框--密码--隐藏
+function registerPwdHide() {
+    $('#registerPwdOpen').fadeOut(0);
+    $('#registerPwdClose').fadeIn(10);
+    $('#registerPwd').prop('type','password');
+}
+//注册模态框--确认密码--显示
+function registerPwdAgainShow() {
+    $('#registerPwdAgainClose').fadeOut(0);
+    $('#registerPwdAgainOpen').fadeIn(10);
+    $('#registerPwdAgain').prop('type','text');
+}
+//注册模态框--确认密码--隐藏
+function registerPwdAgainHide() {
+    $('#registerPwdAgainOpen').fadeOut(0);
+    $('#registerPwdAgainClose').fadeIn(10);
+    $('#registerPwdAgain').prop('type','password');
 }
 // 注册
 function registerUser(obj) {

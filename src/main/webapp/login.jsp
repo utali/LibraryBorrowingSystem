@@ -135,7 +135,13 @@
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                        <input type="password" id="loginPwd" class="form-control" placeholder="请输入密码" onfocus="loginPwdFocus()">
+                        <input type="password" id="loginPwd" class="form-control" placeholder="请输入6位数以上的密码" onfocus="loginPwdFocus()">
+                        <span class="input-group-addon" id="loginPwdClose">
+                            <span class="glyphicon glyphicon-eye-close" onclick="loginPwdShow()"></span>
+                        </span>
+                        <span class="input-group-addon" id="loginPwdOpen" style="display: none">
+                            <span class="glyphicon glyphicon-eye-open" onclick="loginPwdHide()"></span>
+                        </span>
                     </div>
                     <br>
                     <div>
@@ -184,7 +190,13 @@
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                        <input type="password" id="registerPwd" class="form-control" placeholder="请输入密码" onblur="registerPwdBlur()">
+                        <input type="password" id="registerPwd" class="form-control" placeholder="请输入6位数以上的密码" onblur="registerPwdBlur()">
+                        <span class="input-group-addon" id="registerPwdClose">
+                            <span class="glyphicon glyphicon-eye-close" onclick="registerPwdShow()"></span>
+                        </span>
+                        <span class="input-group-addon" id="registerPwdOpen" style="display: none">
+                            <span class="glyphicon glyphicon-eye-open" onclick="registerPwdHide()"></span>
+                        </span>
                     </div>
                     <br>
                     <div class="input-group">
@@ -192,6 +204,12 @@
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
                         <input type="password" id="registerPwdAgain" class="form-control" placeholder="请确认密码" onblur="registerPwdAgainBlur()">
+                        <span class="input-group-addon" id="registerPwdAgainClose">
+                            <span class="glyphicon glyphicon-eye-close" onclick="registerPwdAgainShow()"></span>
+                        </span>
+                        <span class="input-group-addon" id="registerPwdAgainOpen" style="display: none">
+                            <span class="glyphicon glyphicon-eye-open" onclick="registerPwdAgainHide()"></span>
+                        </span>
                     </div>
                     <br>
                     <div>
