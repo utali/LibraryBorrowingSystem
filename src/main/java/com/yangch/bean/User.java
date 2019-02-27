@@ -19,6 +19,8 @@ public class User {
   private String name;
   //用户类型(0是借阅者，1是管理员)
   private String type;
+  //账户余额
+  private Double userOver;
   private String delFlag;
   //用户上次登录时间
   private Date lastLoginTime;
